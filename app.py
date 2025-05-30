@@ -1,3 +1,8 @@
+# --- Compatibility Workaround ---
+import sys
+if sys.version_info >= (3, 13):
+    import multiprocessing
+    multiprocessing.set_start_method("fork", force=True)
 # app.py (Complete Streamlit Application)
 import streamlit as st
 import pandas as pd
